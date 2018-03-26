@@ -1,3 +1,1 @@
 # DatabaseProject
-test
-
