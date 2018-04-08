@@ -17,8 +17,8 @@ ADD PRIMARY KEY (dwmc);
 
 CREATE TABLE COMPANY_RANK
 (
-	year                 VARCHAR(4) NULL,
-	rank_500             VARCHAR(5) NULL,
+	year                 INTEGER NULL,
+	rank_500             INTEGER NULL,
 	dwmc                 VARCHAR(80) NOT NULL
 );
 
@@ -70,7 +70,7 @@ ADD PRIMARY KEY (dwmc);
 
 CREATE TABLE STUDENT
 (
-	year                 VARCHAR(4) NULL,
+	year                 INTEGER NULL,
 	xb                   VARCHAR(4) NULL,
 	xm                   VARCHAR(30) NULL,
 	mz                   VARCHAR(14) NULL,
@@ -98,8 +98,8 @@ ADD PRIMARY KEY (sfzh);
 
 CREATE TABLE UNIVERSITY_RANK
 (
-	year                 VARCHAR(4) NULL,
-	QS_rank              VARCHAR(5) NULL,
+	year                 INTEGER NULL,
+	QS_rank              INTEGER NULL,
 	dwmc                 VARCHAR(80) NOT NULL
 );
 
