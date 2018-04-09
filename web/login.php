@@ -40,6 +40,7 @@
 
 
 <?php  
+include('conn.php');
 session_start();
 if(isset($_SESSION['name'])){
 header("Location:index.html");
@@ -52,17 +53,6 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "登录") {
     //弹出对话框后返回到先前页面  
     echo "<script>alert('请输入用户名或密码！'); history.go(-1);</script>";  
   }else {  
-    //连接数据库  
-    $servername = "127.0.0.1";  
-    $username = "root";  
-    $password = "be4nfanqrilq";  
-    $dbname = "InfoSystem";  
-    // 创建连接  
-    $conn = new mysqli($servername, $username, $password,$dbname);  
-    // 检测连接  
-    if ($conn->connect_error) {  
-      die("连接失败: " . $conn->connect_error);  
-    }  
     //设定字符集,解决数据库插入可能出现乱码，设置编码为GBK  
     //构造sql查询语句  
     $sql = "select username,password from USER where username = '$id' and password = '$psw'";  
