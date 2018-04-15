@@ -43,7 +43,7 @@
 include('conn.php');
 session_start();
 if(isset($_SESSION['name'])){
-header("Location:index.html");
+header("Location:index.php");
 exit();
 }
 if (isset($_POST["submit"]) && $_POST["submit"] == "登录") {  
@@ -65,7 +65,7 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "登录") {
       //将数据以索引的方式存储在数组中  
       $row = mysqli_fetch_array($result);  
       $_SESSION['name'] = $row[0];
-      echo "<script>window.location.href='http://118.89.240.135/';</script>";  
+      echo "<script>window.location.href='http://118.89.240.135/index.php';</script>";  
     }else{  
       //弹出对话框后返回到先前页面  
       echo "<script>alert('用户名或者密码不正确！');history.go(-1);</script>";  
