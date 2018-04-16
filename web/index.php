@@ -32,7 +32,7 @@ exit();
 		<div id="page-wrapper">
 		  <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard <small>Welcome John Doe</small>
+                            Dashboard <small>Welcome <?php echo $_SESSION['name'] ; ?></small>
                         </h1>
 						<ol class="breadcrumb">
 					  <li><a href="#">Home</a></li>
