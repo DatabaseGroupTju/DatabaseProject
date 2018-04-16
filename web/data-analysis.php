@@ -16,7 +16,7 @@ exit();
   <!-- Bootstrap Styles-->
   <link href="assets/css/bootstrap.css" rel="stylesheet" />
   <!-- FontAwesome Styles-->
-  <link href="assets/css/font-awesome.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Morris Chart Styles-->
   <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
   <!-- Custom Styles-->
@@ -29,23 +29,21 @@ exit();
 <body>
   <div id="wrapper">
   <?php require 'nav.php'; ?>
-		<div id="page-wrapper">
-		  <div class="header"> 
+    <div id="page-wrapper">
+      <div class="header"> 
                         <h1 class="page-header">
-                            数据分析
+                            Dashboard <small>Welcome <?php echo $_SESSION['name'] ; ?></small>
                         </h1>
-						<ol class="breadcrumb">
-					  <li><a href="#">主页</a></li>
-					  <li class="active">数据分析</li>
-					</ol> 
-									
-		</div>
+            <ol class="breadcrumb">
+            <li><a href="index.php">Home</a></li>
+            <li class="active">Data</li>
+          </ol> 
+                  
+    </div>
                     <div id="page-inner">
-
-                    
-                    
-                    
-                    
+                     <div id="morris-line-chart"></div>
+                    <div id="morris-bar-chart"></div>
+                    <div id="morris-area-chart"></div>
                     </div>
                     <!-- /. PAGE INNER  -->
 
@@ -58,19 +56,19 @@ exit();
     <script src="assets/js/jquery-1.10.2.js"></script>
     <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>
-	 
+   
     <!-- Metis Menu Js -->
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- Morris Chart Js -->
     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="assets/js/morris/morris.js"></script>
-	
-	
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
-	
-	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
-	
+  
+  
+  <script src="assets/js/easypiechart.js"></script>
+  <script src="assets/js/easypiechart-data.js"></script>
+  
+   <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+  
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
 
