@@ -23,7 +23,7 @@ exit();
 	<link href="assets/css/custom-styles.css" rel="stylesheet" />
 	<!-- Google Fonts-->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+	<link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 
 	<script type="text/javascript">
     onload = function ()
@@ -41,20 +41,21 @@ exit();
        }
     }
 	</script>
+
 </head>
 
 <body>
 	<div id="wrapper">
 	<?php require 'nav.php'; ?>
 		<div id="page-wrapper">
-		<div class="header"> 
+		<div class="header">
 			<h1 class="page-header">
-			Dashboard <small>Welcome <?php echo $_SESSION['name'] ; ?></small>
+			信息栏 <small>欢迎<?php echo $_SESSION['name'] ; ?></small>
 			</h1>
 			<ol class="breadcrumb">
-			<li><a href="index.php">Home</a></li>
-			<li class="active">Data</li>
-			</ol> 						
+			<li><a href="index.php">主页</a></li>
+			<li class="active">导入数据</li>
+			</ol>
 		</div>
 		<div id="page-inner">
 			<form action="upload.php" method="post" enctype="multipart/form-data">
@@ -69,11 +70,14 @@ exit();
 			</div>
 
 			<div id="status"></div>
-
-			<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+			
+			<!-- jQuery Js -->
+			<script src="assets/js/jquery-1.10.2.js"></script>
 			<script src="assets/js/jquery.form.js"></script>
+			<!--<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+			<script src="assets/js/jquery.form.js"></script>-->
+			
 			<script>
-
 			$(function(){
 				var bar = $('.bar');
 				var percent = $('.percent');
@@ -123,33 +127,26 @@ exit();
 
 		});
 	</script>
-		
-		<div id="morris-line-chart"></div>
-		<div id="morris-bar-chart"></div>
-		<div id="morris-area-chart"></div>
+
 		</div>
 		<!-- /. PAGE INNER  -->
 		</div>
 		<!-- /. PAGE WRAPPER  -->
 		</div>
 		<!-- /. WRAPPER  -->
-		<!-- JS Scripts-->
-		<!-- jQuery Js -->
-	<script src="assets/js/jquery-1.10.2.js"></script>
+	<!-- JS Scripts-->
+	
 	<!-- Bootstrap Js -->
 	<script src="assets/js/bootstrap.min.js"></script>
-	
+
 	<!-- Metis Menu Js -->
 	<script src="assets/js/jquery.metisMenu.js"></script>
-	<!-- Morris Chart Js -->
-	<script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-	<script src="assets/js/morris/morris.js"></script>
-	
+
 	<script src="assets/js/easypiechart.js"></script>
 	<script src="assets/js/easypiechart-data.js"></script>
-	
+
 	<script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
-	
+
 	<!-- Custom Js -->
 	<script src="assets/js/custom-scripts.js"></script>
 
