@@ -1,6 +1,6 @@
 <?php
-require_once './import_data.php';
-$year=$_POST['sel'];
+require_once './import_data.php'; //引入导入Excel数据的文件
+$year=$_POST['sel'];	//获取表单year值
 
 if (!empty($_FILES['myfile'])) {//判断上传内容是否为空
     if ($_FILES['myfile']['error'] > 0) {//判断上传错误信息

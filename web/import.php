@@ -25,13 +25,14 @@ exit();
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 	<link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 
+	<!-- 添加select组件 -->
 	<script type="text/javascript">
     onload = function ()
     {
          var year=new Date().getFullYear(); //获取当前年份
 
        var sel = document.getElementById ('sel');//获取select下拉列表
-       for ( var i = year+3; i >= 2000; i--)//循环添加2006到当前年份加3年的每个年份依次添加到下拉列表
+       for ( var i = year+3; i >= 2000; i--)//循环添加2000到当前年份加3年年份,依次添加到下拉列表
        {
            var option = document.createElement ('option');
            option.value = i;
@@ -70,13 +71,14 @@ exit();
 			</div>
 
 			<div id="status"></div>
-			
+
 			<!-- jQuery Js -->
 			<script src="assets/js/jquery-1.10.2.js"></script>
 			<script src="assets/js/jquery.form.js"></script>
 			<!--<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 			<script src="assets/js/jquery.form.js"></script>-->
-			
+
+			<!-- ajax异步提交文件-->
 			<script>
 			$(function(){
 				var bar = $('.bar');
@@ -135,7 +137,7 @@ exit();
 		</div>
 		<!-- /. WRAPPER  -->
 	<!-- JS Scripts-->
-	
+
 	<!-- Bootstrap Js -->
 	<script src="assets/js/bootstrap.min.js"></script>
 
