@@ -1,202 +1,100 @@
-/*------------------------------------------------------
-    Author : www.webthemez.com
-    License: Commons Attribution 3.0
-    http://creativecommons.org/licenses/by/3.0/
----------------------------------------------------------  */
 
-(function ($) {
-    "use strict";
-    var mainApp = {
 
-        initFunction: function () {
-            /*MENU 
-            ------------------------------------*/
-            $('#main-menu').metisMenu();
-			
-            $(window).bind("load resize", function () {
-                if ($(this).width() < 768) {
-                    $('div.sidebar-collapse').addClass('collapse')
-                } else {
-                    $('div.sidebar-collapse').removeClass('collapse')
+var container_1 = document.getElementById('picBody_1');
+var worldMapContainer_1 = document.getElementById('pic_1');
+
+var container_2 = document.getElementById('picBody_2');
+var worldMapContainer_2 = document.getElementById('pic_2');
+
+//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+var resizeWorldMapContainer = function () {
+	worldMapContainer_1.style.width = container_1.clientWidth+'px';
+	worldMapContainer_1.style.height = container_1.clientHeight +'px';
+	
+	worldMapContainer_2.style.width = container_2.clientWidth+'px';
+	worldMapContainer_2.style.height = container_2.clientHeight +'px';
+};
+//设置容器高宽
+resizeWorldMapContainer();
+
+// 基于准备好的dom，初始化echarts实例
+var myChart_1 = echarts.init(worldMapContainer_1);
+var myChart_2 = echarts.init(worldMapContainer_2);
+
+// 指定图表的配置项和数据
+var option_1 = {
+	title : {
+        text: '就业单位性质',
+        subtext: '2017届',
+        x:'center'
+    },
+	tooltip: {},
+	legend: {
+		data:['销量']
+	},
+	xAxis: {
+		data: ["民企","央企","国企","三资企业","高等教育单位","党政机关","事业单位","科研院所","初、中等教育单位","部队","西部计划、三支一扶、大学生村官、支教"]
+	},
+	yAxis: {
+		name:"人数"
+	},
+	series: [{
+		name: '人数',
+		type: 'bar',
+		data: [1629,977,789,738,373,253,169,86,55,32,5]
+	}]
+};
+
+var option_2 = {
+    title : {
+        text: '就业去向',
+        subtext: '2017届',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['升学','就业','出国（出境）','待就业']
+    },
+    series : [
+        {
+            name: '人数',
+            type: 'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:1869, name:'升学'},
+                {value:5347, name:'就业'},
+                {value:617, name:'出国（出境）'},
+                {value:98, name:'待就业'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
                 }
-            });
-			
- 
-
-            /* MORRIS BAR CHART
-			-----------------------------------------*/
-            Morris.Bar({
-                element: 'morris-bar-chart',
-                data: [{
-                    y: '2006',
-                    a: 100,
-                    b: 90
-                }, {
-                    y: '2007',
-                    a: 75,
-                    b: 65
-                }, {
-                    y: '2008',
-                    a: 50,
-                    b: 40
-                }, {
-                    y: '2009',
-                    a: 75,
-                    b: 65
-                }, {
-                    y: '2010',
-                    a: 50,
-                    b: 40
-                }, {
-                    y: '2011',
-                    a: 75,
-                    b: 65
-                }, {
-                    y: '2012',
-                    a: 100,
-                    b: 90
-                }],
-                xkey: 'y',
-                ykeys: ['a', 'b'],
-                labels: ['Series A', 'Series B'],
-                hideHover: 'auto',
-                resize: true
-            });
-
-            /* MORRIS DONUT CHART
-			----------------------------------------*/
-            Morris.Donut({
-                element: 'morris-donut-chart',
-                data: [{
-                    label: "Download Sales",
-                    value: 12
-                }, {
-                    label: "In-Store Sales",
-                    value: 30
-                }, {
-                    label: "Mail-Order Sales",
-                    value: 20
-                }],
-                resize: true
-            });
-
-            /* MORRIS AREA CHART
-			----------------------------------------*/
-
-            Morris.Area({
-                element: 'morris-area-chart',
-                data: [{
-                    period: '2010 Q1',
-                    iphone: 2666,
-                    ipad: null,
-                    itouch: 2647
-                }, {
-                    period: '2010 Q2',
-                    iphone: 2778,
-                    ipad: 2294,
-                    itouch: 2441
-                }, {
-                    period: '2010 Q3',
-                    iphone: 4912,
-                    ipad: 1969,
-                    itouch: 2501
-                }, {
-                    period: '2010 Q4',
-                    iphone: 3767,
-                    ipad: 3597,
-                    itouch: 5689
-                }, {
-                    period: '2011 Q1',
-                    iphone: 6810,
-                    ipad: 1914,
-                    itouch: 2293
-                }, {
-                    period: '2011 Q2',
-                    iphone: 5670,
-                    ipad: 4293,
-                    itouch: 1881
-                }, {
-                    period: '2011 Q3',
-                    iphone: 4820,
-                    ipad: 3795,
-                    itouch: 1588
-                }, {
-                    period: '2011 Q4',
-                    iphone: 15073,
-                    ipad: 5967,
-                    itouch: 5175
-                }, {
-                    period: '2012 Q1',
-                    iphone: 10687,
-                    ipad: 4460,
-                    itouch: 2028
-                }, {
-                    period: '2012 Q2',
-                    iphone: 8432,
-                    ipad: 5713,
-                    itouch: 1791
-                }],
-                xkey: 'period',
-                ykeys: ['iphone', 'ipad', 'itouch'],
-                labels: ['iPhone', 'iPad', 'iPod Touch'],
-                pointSize: 2,
-                hideHover: 'auto',
-                resize: true
-            });
-
-            /* MORRIS LINE CHART
-			----------------------------------------*/
-            Morris.Line({
-                element: 'morris-line-chart',
-                data: [{
-                    y: '2006',
-                    a: 100,
-                    b: 90
-                }, {
-                    y: '2007',
-                    a: 75,
-                    b: 65
-                }, {
-                    y: '2008',
-                    a: 50,
-                    b: 40
-                }, {
-                    y: '2009',
-                    a: 75,
-                    b: 65
-                }, {
-                    y: '2010',
-                    a: 50,
-                    b: 40
-                }, {
-                    y: '2011',
-                    a: 75,
-                    b: 65
-                }, {
-                    y: '2012',
-                    a: 100,
-                    b: 90
-                }],
-                xkey: 'y',
-                ykeys: ['a', 'b'],
-                labels: ['Series A', 'Series B'],
-                hideHover: 'auto',
-                resize: true
-            });
-           
-     
-        },
-
-        initialization: function () {
-            mainApp.initFunction();
-
+            }
         }
+    ]
+};
 
-    }
-    // Initializing ///
+// 使用刚指定的配置项和数据显示图表。
+myChart_1.setOption(option_1);
+myChart_2.setOption(option_2);
 
-    $(document).ready(function () {
-        mainApp.initFunction();
-    });
+var resizeChart = function () {
+	myChart_1.resize();
+	myChart_2.resize();
+}
 
-}(jQuery));
+//用于使chart自适应高度和宽度
+window.onresize = function () {
+	//重置容器高宽
+	resizeWorldMapContainer();
+	resizeChart();
+};
